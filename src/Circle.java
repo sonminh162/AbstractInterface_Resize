@@ -1,4 +1,5 @@
-public class Circle extends Shape {
+
+public class Circle extends Shape implements Resizeable {
     private double radius = 1.0;
 
     public Circle() {
@@ -28,7 +29,10 @@ public class Circle extends Shape {
     public double getPerimeter() {
         return 2 * radius * Math.PI;
     }
-
+    @Override
+    public void resize(double percent){
+        radius *= percent/100;
+    }
     @Override
     public String toString() {
         return "A Circle with radius="
